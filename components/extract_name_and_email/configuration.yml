@@ -1,4 +1,6 @@
 description: Extracts the name and email for each persona if available from the persona_list
   provided. Outputs a list of dictionaries containing name and email.
+input-class: ExtractNameAndEmailInputDict
 name: ExtractNameAndEmail
+output-class: ExtractNameAndEmailOutputDict
 parameters: {}
