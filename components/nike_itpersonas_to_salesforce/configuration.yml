@@ -1,0 +1,11 @@
+description: 'This is a Yeager workflow component that takes organization name, department
+  name, and Salesforce credentials as input.
+
+  It processes the information and stores it into the Salesforce platform. It returns
+  the number of successful imports
+
+  and the total number of records imported as output.
+
+  '
+name: NikeITPersonasToSalesforce
+parameters: {}
