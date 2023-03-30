@@ -1,0 +1,5 @@
+description: Retrieves a list of personas belonging to IT department at Nike. Assumes
+  access to an API or database with this information. Takes organization_name and
+  department_name as inputs and outputs persona_list.
+name: CollectNikeITPersonas
+parameters: {}
