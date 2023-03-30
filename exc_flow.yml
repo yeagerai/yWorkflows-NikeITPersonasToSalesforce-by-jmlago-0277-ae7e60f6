@@ -1,0 +1,28 @@
+yaml
+components:
+  node-0:
+    class: CollectNikeITPersonas
+    module-path: components/collect_nike_it_personas/collect_nike_it_personas.py
+    configuration: !include components/collect_nike_it_personas/configuration.yml
+  node-1:
+    class: ExtractNameAndEmail
+    module-path: components/extract_name_and_email/extract_name_and_email.py
+    configuration: !include components/extract_name_and_email/configuration.yml
+  node-2:
+    class: SendToSalesforce
+    module-path: components/send_to_salesforce/send_to_salesforce.py
+    configuration: !include components/send_to_salesforce/configuration.yml
+
+flow-matrix:
+  - "100"
+  - "010"
+  - "001"
+
+mapper:
+  node-0.CollectNikeITPersonas.organization_name: InputBaseModel.organization_name
+  node-0.CollectNikeITPersonas.department_name: InputBaseModel.department_name
+  node-1.ExtractNameAndEmail.persona_list: node-0.CollectNikeITPersonas.persona_list
+  node-2.SendToSalesforce.name_email_list: node-1.ExtractNameAndEmail.name_email_list
+  node-2.SendToSalesforce.salesforce_credentials: InputBaseModel.salesforce_credentials
+  OutputBaseModel.successful_imports: node-2.SendToSalesforce.successful_imports
+  OutputBaseModel.total_imported: node-2.SendToSalesforce.total_imported
