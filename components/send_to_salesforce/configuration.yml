@@ -1,0 +1,5 @@
+description: Sends the name and email information to Salesforce using the provided
+  Salesforce credentials. Assumes Salesforce API integration. Takes the name_email_list
+  and salesforce_credentials as inputs and outputs successful_imports and total_imported.
+name: SendToSalesforce
+parameters: {}
