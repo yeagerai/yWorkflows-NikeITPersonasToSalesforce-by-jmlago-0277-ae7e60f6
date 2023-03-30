@@ -7,5 +7,7 @@ description: 'This is a Yeager workflow component that takes organization name, 
   and the total number of records imported as output.
 
   '
+input-class: NikeITPersonasToSalesforceIn
 name: NikeITPersonasToSalesforce
+output-class: NikeITPersonasToSalesforceOut
 parameters: {}
